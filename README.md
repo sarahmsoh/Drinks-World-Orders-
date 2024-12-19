@@ -1,78 +1,82 @@
 # Phase 3 Project: CLI
 
-## Learning Goals
+# Drink Order Management CLI
 
-- Configure environments with project-specific parameters using Pipenv.
-- Import and use external libraries.
-- Use SQLAlchemy ORM and Alembic to create a database schema and update it as you
-  continue to build your CLI.
-- Use SQLAlchemy ORM to join multiple tables to each other using one-to-one,
-  one-to-many, many-to-many relationships.
-- Use `list`s, `dict`s, and `tuple`s in appropriate contexts.
-- Exercise best practices in CLI design.
+This is a Python CLI application for managing an order page for drinks. The application uses SQLAlchemy as the ORM to handle database operations and Click for the CLI interface. It allows users to create, delete, view, and find customers and orders.
 
-***
+## Features
 
-## Key Vocab
+- **Manage Customers**: Create, delete, list, and find customers.
+- **Manage Orders**: Create, delete, list, and find orders.
+- **Database**: Uses SQLite for storing customers and orders.
+- **ORM**: SQLAlchemy is used for database operations.
+- **CLI**: Click is used to create an interactive command-line interface.
 
-- **Command Line**: a text-based interface that is built into your computer's
-operating system. It allows you to access the files and applications on your
-computer manually or through scripts.
-- **Terminal**: the application in Mac OS that allows you to access the command
-line.
-- **Command Shell/Powershell**: the applications in Windows that allow you to access
-the command line.
-- **Command-Line Interface (CLI)**: a text-based interface used to run programs,
-manage files and interact with objects in memory. As the name suggests, it is
-run from the command line.
+## Installation
 
-***
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
-## Instructions
+2. Create a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Welcome to the end of Phase 3! You've learned about a lot in this unit:
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- Python fundamentals.
-- Data structures (and more recently, algorithms).
-- Object-oriented programming.
-- Object inheritance.
-- Class attributes and methods.
-- Configuring applications.
-- SQL fundamentals.
-- Table relations in SQL.
-- Object-relational mapping with Python.
-- Object-relational mapping with SQLAlchemy.
-- Building CLIs.
+4. Set up the database:
+   ```bash
+   python models.py
+   ```
 
-In this project, we're going to use these skills to create a CLI. We want you to
-display knowledge of as much from Phase 3 as you can- you won't be able to fit
-everything in, but we'll expect to see:
+## Usage
 
-- A CLI application that solves a real-world problem and adheres to best
-  practices.
-- A database created and modified with SQLAlchemy ORM with 3+ related tables.
-- A well-maintained virtual environment using Pipenv.
-- Proper package structure in your application.
-- Use of `list`s, `dict`s, and `tuple`s.
+Run the CLI application:
+```bash
+python app.py
+```
 
-***
+### Commands
 
-## Tips and Tricks?
+#### Drink Management
+- `customer create`: Create a new customer.
+- `customer delete`: Delete a customer by ID.
+- `customer list`: List all customers.
+- `customer find`: Find a customer by ID.
 
-- Think about your database schema before you begin- migrations are a pain!
-- Keep your Python objects, SQLAlchemy objects, and CLI script in separate
-  modules.
-- If you get stuck trying to accomplish a specific task, check online to see if
-  there's a Python library that will make it easier.
-- Consider using [Click][click] or [Fire][fire] to take care of basic CLI tasks
-  for you.
+#### Order Management
+- `order create`: Create a new order.
+- `order delete`: Delete an order by ID.
+- `order list`: List all orders.
+- `order find`: Find an order by ID.
 
-***
+## Project Structure
 
-## Resources
+```
+.
+├── app.py          # Main CLI application
+├── models.py       # Database models and setup
+├── requirements.txt # Dependencies
+├── README.md       # Project documentation
+```
 
-- [Click documentation][click]
-- [The Python Fire Guide][fire]
+## Dependencies
 
-[click]: https://click.palletsprojects.com/en/8.1.x/
-[fire]: https://google.github.io/python-fire/guide/
+- Python 3.8
+- SQLAlchemy
+- Click
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
